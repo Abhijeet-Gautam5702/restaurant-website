@@ -1,5 +1,11 @@
-.anchor {
+a {
   text-decoration: none;
+  color:white;
+}
+
+li{
+  list-style: none;
+  font-family: var(--font-secondary);
 }
 
 /*center a div*/
@@ -50,3 +56,5 @@
     font-size: 0.6rem;
   }
 }
+
+/*  */
