@@ -1,6 +1,7 @@
 nav {
   position: fixed;
-  top:0px;
+  top: 0px;
+  z-index: 1;
 
   display: flex;
   flex-direction: row;
@@ -9,8 +10,11 @@ nav {
   padding: 0.5rem;
   width: 100%;
 
-  background: rgba(0, 0, 0, 0.3);
-  background-color: var(--matt-black); //testing
+  background: rgba(0, 0, 0, 0.4);
+  // background-color: var(--matt-black); //testing
+  @media screen and (max-width: 450px) {
+    background-color: black;
+  }
 }
 
 .navbar__logo {
@@ -19,7 +23,7 @@ nav {
 
 .navbar__menu {
   display: flex;
-//   display: none; //testing
+  //   display: none; //testing
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
@@ -57,15 +61,15 @@ nav {
   // outline: 2px solid white;
   // position:fixed;
   // right:0.5rem;
-  display:none;
+  display: none;
   color: white;
   width: 20px;
   height: 20px;
   margin: 0 0.5rem;
   cursor: pointer;
 
-  @media screen and (max-width:425px){
-      display: block;
+  @media screen and (max-width: 425px) {
+    display: block;
   }
 
   svg {
@@ -76,13 +80,14 @@ nav {
 
 .navbar__menu-dropdown {
   width: 100%;
-  background-color: var(--matt-black);
+  // background-color: var(--matt-black);
+  background: rgba(0, 0, 0, 0.4);
   padding: 1rem;
 
   //testing
   position: fixed;
-  z-index: -1;
-  transform: translate(0,-100%);
+  z-index: 0;
+  transform: translate(0, -100%);
 
   display: flex;
   flex-direction: column;
@@ -92,8 +97,9 @@ nav {
   li {
     font-family: var(--font-secondary);
     margin: 0.5rem;
+    // margin-top:0;
     text-transform: uppercase;
-    font-size:0.8rem;
+    font-size: 0.8rem;
 
     a {
       color: white;
@@ -105,8 +111,11 @@ nav {
     }
   }
 
-//   display: none;
-@media screen and (min-width:425px){
+  
+  @media screen and (min-width: 425px) {
     display: none;
-}
+  }
+  @media screen and (max-width: 425px) {
+    background-color: var(--matt-black);
+  }
 }

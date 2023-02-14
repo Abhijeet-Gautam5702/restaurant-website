@@ -1,11 +1,16 @@
 a {
   text-decoration: none;
-  color:white;
+  color: white;
 }
 
-li{
+li {
   list-style: none;
   font-family: var(--font-secondary);
+}
+
+.app__container {
+  width: 100%;
+  min-height: 100vh;
 }
 
 /*center a div*/
@@ -21,6 +26,7 @@ li{
   font-family: var(--font-base);
   font-size: 2.5rem;
   text-align: center;
+  text-transform: capitalize;
 
   @media screen and (min-width: 2000px) {
     font-size: 5rem;
@@ -57,4 +63,31 @@ li{
   }
 }
 
-/*  */
+/* style for button element */
+.btn {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 3px;
+  background-color: var(--orange);
+  color: var(--white);
+  font-family: var(--font-secondary);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background-color: var(--matt-black);
+    // color:var(--white);
+    // transform: scale(1.1);
+  }
+
+  @media screen and (min-width: 2000px) {
+    padding: 1.4rem 2.4rem;
+    font-size: 2rem;
+  }
+  @media screen and (max-width: 450px) {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
