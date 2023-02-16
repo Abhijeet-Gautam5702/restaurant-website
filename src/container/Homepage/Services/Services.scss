@@ -1,0 +1,19 @@
+.app__services {
+  flex-flow: column;
+  margin-top: 5rem;
+  background-color: var(--white);
+
+  h2 {
+    span {
+      color: var(--orange);
+    }
+  }
+}
+
+.app__services-cards {
+  margin-top: 2rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}

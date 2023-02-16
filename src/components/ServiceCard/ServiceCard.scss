@@ -1,0 +1,38 @@
+.services__card {
+  // border: 2px solid black;
+  border-radius: 5px;
+  background-color: var(--orange);
+  //   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  //   max-height: 250px;
+  min-width: 200px;
+  margin: 0.5rem 1rem;
+    width:20%;
+  padding: 1rem;
+  transition: 0.3s;
+//   color: white;
+
+img {
+    width: 50px;
+    object-fit: cover;
+}
+h2 {
+    text-transform: capitalize;
+    margin-top: 1.2rem;
+}
+  p {
+    margin-top: 0.3rem;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  @media screen and (min-width:2000px){
+    margin:2rem;
+    padding:2rem;
+
+    img{
+        width:100px;
+    }
+  }
+}
