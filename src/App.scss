@@ -11,11 +11,14 @@ li {
 .app__container {
   width: 100%;
   min-height: 100vh;
+  // padding:2rem;
+  // outline:5px solid green;
 }
 
 /*center a div*/
 .app__flex {
   display: flex;
+  flex-flow:row wrap;
   justify-content: center;
   align-items: center;
 }

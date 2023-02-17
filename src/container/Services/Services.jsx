@@ -1,8 +1,8 @@
 import React from "react";
 import "./Services.scss";
 import { motion } from "framer-motion";
-import { icons } from "../../../assets/icons/index";
-import ServiceCard from "../../../components/ServiceCard/ServiceCard";
+import { icons } from "../../assets/icons/index";
+import ServiceCard from "../../components/ServiceCard/ServiceCard";
 
 const servicesData = [
   {
@@ -40,9 +40,10 @@ const variants = {
     opacity: 1,
     y: 0,
     transition: {
-      type: "spring",
+      // type: "spring",
       duration: 1,
       staggerChildren: 0.25,
+      ease: "easeInOut",
     },
   },
   whileHover: {
@@ -59,11 +60,11 @@ export default function Services() {
       <motion.div
         variants={variants}
         initial="hidden"
-        whileInView="visible"
+        animate="visible"
         className="app__services-cards"
       >
         {servicesData.map((item) => {
-          return <ServiceCard dataItem={item} variants={variants}/>;
+          return <ServiceCard key={Math.random()} dataItem={item} variants={variants} />;
         })}
       </motion.div>
     </div>
