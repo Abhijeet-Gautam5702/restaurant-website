@@ -4,7 +4,7 @@ import "./Homepage.scss";
 
 export default function Homepage() {
   return (
-    <div className="app__container  home ">
+    <div id="home" className="app__container  home ">
       <motion.div
         className="home__welcome-container"
         whileInView={{ opacity: [0, 1], x: ["-20%", "0%"] }}

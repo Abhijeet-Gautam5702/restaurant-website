@@ -53,7 +53,7 @@ const variants = {
 
 export default function Services() {
   return (
-    <div className="app__services app__flex app__container">
+    <div className="app__services app__flex ">
       <h2 className="head-text">
         we care for <span>our customers</span>
       </h2>

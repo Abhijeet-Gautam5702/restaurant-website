@@ -26,7 +26,7 @@ const toggleMenuAnimation = {
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  
+
   return (
     <>
       <nav>
@@ -37,16 +37,16 @@ export default function Navbar() {
           </div>
           <ul className="navbar__menu">
             <li>
-              <a href="">Home</a>
+              <a href="#home">Home</a>
             </li>
             <li>
-              <a href="">Menu</a>
+              <a href="#menu">Menu</a>
             </li>
             <li>
-              <a href="">Order History</a>
+              <a href="#order-history">Order History</a>
             </li>
             <li>
-              <a href="">About</a>
+              <a href="#about">About</a>
             </li>
           </ul>
 
@@ -60,7 +60,7 @@ export default function Navbar() {
             <GiHamburgerMenu />
           </motion.div>
         </div>
-        
+
         {/* Navbar for small devices */}
         {isOpen && (
           <motion.ul
@@ -68,18 +68,19 @@ export default function Navbar() {
             animate={isOpen ? "open" : "closed"}
             variants={dropdownMenuAnimation}
             transition={{ duration: 0.3 }}
+            onClick={() => setIsOpen((isOpen) => !isOpen)}
           >
             <li>
-              <a href="">Home</a>
+              <a href="#home">Home</a>
             </li>
             <li>
-              <a href="">Menu</a>
+              <a href="#menu">Menu</a>
             </li>
             <li>
-              <a href="">Order History</a>
+              <a href="#order-history">Order History</a>
             </li>
             <li>
-              <a href="">About</a>
+              <a href="#about">About</a>
             </li>
           </motion.ul>
         )}

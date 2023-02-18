@@ -11,20 +11,21 @@
 
 .welcome__gallery {
   width: 40%;
-//   outline: 2px solid red;
+  // outline: 2px solid red;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  margin: 3rem 0;
 
-  img:nth-child(1),
-  img:nth-child(4) {
-    transform: scale(0.6);
-  }
-  img:nth-child(2),
-  img:nth-child(3) {
-    transform: scale(1);
-  }
+  // img:nth-child(1),
+  // img:nth-child(4) {
+  //   transform: scale(0.6);
+  // }
+  // img:nth-child(2),
+  // img:nth-child(3) {
+  //   transform: scale(1);
+  // }
 
   img {
     //   box-shadow: 0 0 20px rgba(0,0,0,0.5);
@@ -32,8 +33,8 @@
     // outline:2px solid blue;
     width: 45%;
     object-fit: cover;
-    border-radius: 10px;
-    margin: 0.5rem;//testing
+    border-radius: 5px;
+    margin: 0.5rem; //testing
   }
 
   @media screen and (max-width: 768px) {
@@ -45,5 +46,77 @@
   }
   @media screen and (min-width: 2000px) {
     width: 40%;
+  }
+}
+
+.welcome__intro {
+  // width: 50%;
+  flex: 1;
+  margin: 2rem;
+  h2 {
+    margin-bottom: 1rem;
+    span {
+      color: var(--orange);
+    }
+  }
+
+  .p-text {
+    margin-bottom: 1rem;
+    font-size:0.8rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin: 0;
+  }
+  @media screen and (min-width: 2000px) {
+    h2 {
+      margin-bottom: 2.5rem;
+    }
+    .p-text {
+      margin-bottom: 2.5rem;
+    }
+  }
+}
+
+.welcome__intro-stats {
+  // outline: 2px solid green;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (max-width: 425px) {
+    flex-direction: column;
+  }
+}
+
+.stats-container {
+  // outline: 2px solid blue;
+  // width: 30%;
+  // box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2rem 0.7rem;
+  margin: 0.2rem;
+
+  .stats-number {
+    margin-right: 1rem;
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-family: var(--font-secondary);
+    color: var(--orange);
+    @media screen and (min-width: 2000px) {
+      font-size: 6.5rem;
+      margin-right: 2rem;
+    }
+  }
+  .subhead-text {
+    text-transform: uppercase;
+    @media screen and (max-width: 768px) {
+      font-size: 1rem;
+    }
   }
 }

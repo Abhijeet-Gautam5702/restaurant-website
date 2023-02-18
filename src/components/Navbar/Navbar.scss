@@ -1,15 +1,16 @@
 nav {
+  // backdrop-filter: blur(5px);
   position: fixed;
   top: 0px;
   z-index: 1;
-
+  
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
   width: 100%;
-
-  background: rgba(0, 0, 0, 0.4);
-  // background-color: var(--matt-black); //testing
+  
+  // background: rgba(0, 0, 0, 0.4);
+  background-color: black; 
   @media screen and (max-width: 450px) {
     background-color: black;
   }
