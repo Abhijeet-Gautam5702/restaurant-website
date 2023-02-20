@@ -5,15 +5,15 @@ import { motion } from "framer-motion";
 const cardVariants = {
   hidden: {
     opacity: 0,
-    y: 100,
+    y: 50,
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      type: "spring",
-      duration: 1,
-      staggerChildren: 0.5,
+      // type: "spring",
+      // delay: 0.6,
+      // staggerChildren: 0.5,
     },
   },
 
@@ -22,11 +22,11 @@ const cardVariants = {
   },
 };
 
-export default function ServiceCard({ dataItem, variants }) {
+export default function ServiceCard({ dataItem }) {
   const { title, description, icon } = dataItem;
   return (
     <motion.div
-      variants={variants}
+      variants={cardVariants}
       initial="hidden"
       whileInView="visible"
       whileHover="whileHover"

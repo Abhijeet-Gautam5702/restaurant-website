@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Navbar.scss";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { motion } from "framer-motion";
@@ -25,11 +25,26 @@ const toggleMenuAnimation = {
 };
 
 export default function Navbar() {
+  const [navBGColor, setNavBGColor] = useState("rgba(0,0,0,0.4)");
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    function changeNavBGColor() {
+      if (window.scrollY > window.innerHeight) {
+        setNavBGColor("black");
+      } else {
+        setNavBGColor("rgba(0,0,0,0.4)");
+      }
+    }
+
+    window.addEventListener("scroll", changeNavBGColor);
+
+    return () => window.removeEventListener("scroll", changeNavBGColor);
+  });
 
   return (
     <>
-      <nav>
+      <nav style={{ backgroundColor: navBGColor }}>
         {/* Navbar for large devices */}
         <div className="navbar">
           <div className="navbar__logo head-text">

@@ -18,23 +18,11 @@
   align-items: center;
   margin: 3rem 0;
 
-  // img:nth-child(1),
-  // img:nth-child(4) {
-  //   transform: scale(0.6);
-  // }
-  // img:nth-child(2),
-  // img:nth-child(3) {
-  //   transform: scale(1);
-  // }
-
   img {
-    //   box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    // box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
-    // outline:2px solid blue;
     width: 45%;
     object-fit: cover;
-    border-radius: 5px;
-    margin: 0.5rem; //testing
+    // border-radius: 5px;
+    margin: 0.5rem; 
   }
 
   @media screen and (max-width: 768px) {

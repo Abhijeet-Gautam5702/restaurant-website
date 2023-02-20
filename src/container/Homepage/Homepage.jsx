@@ -2,13 +2,29 @@ import React from "react";
 import { motion } from "framer-motion";
 import "./Homepage.scss";
 
+const homepageVariants = {
+  hidden: {
+    opacity: 0,
+    x: "-20%",
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeIn",
+    },
+  },
+};
+
 export default function Homepage() {
   return (
     <div id="home" className="app__container  home ">
       <motion.div
         className="home__welcome-container"
-        whileInView={{ opacity: [0, 1], x: ["-20%", "0%"] }}
-        transition={{ duration: 0.5, ease: "easeIn" }}
+        variants={homepageVariants}
+        initial="hidden"
+        animate="visible"
       >
         <h1 className="head-text">
           enjoy our <br />

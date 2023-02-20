@@ -41,7 +41,7 @@ export default function Footer() {
           Abhijeet Gautam
         </a>
 
-        <a target="_blank" href="https://github.com/Abhijeet-Gautam5702">
+        <a target="_blank" href="https://github.com/Abhijeet-Gautam5702/restaurant-website">
           <FaGithub />
         </a>
         <a target="_blank" href="https://twitter.com/abhijeet_gautam">

@@ -34,15 +34,15 @@ const servicesData = [
 const variants = {
   hidden: {
     opacity: 0,
-    y: 100,
+    y: 30,
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
       // type: "spring",
-      duration: 1,
-      staggerChildren: 0.25,
+      duration: 0.7,
+      // staggerChildren: 0.25,
       ease: "easeInOut",
     },
   },
@@ -64,7 +64,7 @@ export default function Services() {
         className="app__services-cards"
       >
         {servicesData.map((item) => {
-          return <ServiceCard key={Math.random()} dataItem={item} variants={variants} />;
+          return <ServiceCard key={Math.random()} dataItem={item} />;
         })}
       </motion.div>
     </div>

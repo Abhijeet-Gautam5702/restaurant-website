@@ -10,8 +10,8 @@ const imgVariants = {
   visible: {
     opacity: 1,
     transition: {
-      duration: 1.5,
-      type: "spring",
+      duration: 0.5,
+      // type: "spring",
       ease: "easeInOut",
     },
   },
