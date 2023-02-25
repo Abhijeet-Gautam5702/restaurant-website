@@ -5,16 +5,19 @@ import Navbar from "./components/Navbar/Navbar";
 import Homepage from "./container/Homepage/Homepage";
 import Services from "./container/Services/Services";
 import Welcome from "./container/Welcome/Welcome";
-
+import Menu from "./container/Menu/Menu";
 
 function App() {
-  return <>
-    <Navbar/>
+  return (
+    <>
+      {/*<Navbar/>
     <Homepage/>
     <Services/> 
     <Welcome/>
-    <Footer/>
-  </>;
+    <Footer/> */}
+      <Menu />
+    </>
+  );
 }
 
 export { App };

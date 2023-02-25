@@ -24,7 +24,7 @@ const toggleMenuAnimation = {
   },
 };
 
-export default function Navbar() {
+export default function Navbar({ onHomePage }) {
   const [navBGColor, setNavBGColor] = useState("rgba(0,0,0,0.4)");
   const [isOpen, setIsOpen] = useState(false);
 
@@ -44,7 +44,13 @@ export default function Navbar() {
 
   return (
     <>
-      <nav style={{ backgroundColor: navBGColor }}>
+      <nav
+        style={
+          onHomePage
+            ? { backgroundColor: navBGColor }
+            : { backgroundColor: "var(--matt-black)" }
+        }
+      >
         {/* Navbar for large devices */}
         <div className="navbar">
           <div className="navbar__logo head-text">

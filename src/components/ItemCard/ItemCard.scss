@@ -1,0 +1,152 @@
+.card__item {
+  //   background-color: var(--light-blue);
+  // outline: 2px solid blue;
+  //   border-radius: 5px;
+  //   padding: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  grid-template-rows: repeat(2, 1fr);
+  width: 380px;
+  margin: 1rem;
+  font-family: var(--font-secondary);
+
+  @media screen and (max-width: 768px) {
+    width: 210px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  @media screen and (min-width: 2000px) {
+    width: 900px;
+  }
+}
+
+.card__item-label {
+  position: absolute;
+  //   border-radius:5px 0 0 0;
+  left: 0px;
+  top: 0px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  background-color: var(--matt-black);
+  color: var(--white);
+  padding: 0.3rem 0.7rem;
+
+  @media screen and (min-width: 2000px) {
+    font-size: 2rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+.card__item-detail {
+  padding: 1rem;
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  img {
+    width: 140px;
+    object-fit: cover;
+    border-radius: 3px;
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+    @media screen and (min-width: 2000px) {
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .rating-price-cont {
+    margin-top: 0.3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    // outline: 2px solid blue;
+    height: fit-content;
+
+    @media screen and (max-width: 768px) {
+      margin-top: 0.5rem;
+    }
+    @media screen and (min-width: 2000px) {
+      margin-top: 1.5rem;
+    }
+  }
+
+  @media screen and (min-width: 2000px) {
+    padding: 2rem;
+  }
+}
+
+.rating {
+  // width: 70px;
+  padding: 0.1rem 0.3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  //   outline: 2px solid red;
+  background-color: var(--red);
+  color: var(--white);
+
+  .star {
+    width: 17px;
+    height: 17px;
+    margin-right: 0.5rem;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    @media screen and (min-width: 2000px) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .rating-text {
+    @media screen and (min-width: 2000px) {
+      font-size: 2.3rem;
+    }
+  }
+
+  @media screen and (min-width: 2000px) {
+    padding: 0.5rem 1.3rem;
+  }
+}
+
+.card__item-desc {
+  padding: 1rem;
+  padding-left: 0;
+  grid-column: span 1;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+  @media screen and (min-width: 2000px) {
+    padding: 2rem;
+    padding-left: 0;
+  }
+}
+
+.card__item-btn {
+  grid-column: span 1;
+  height: max-content;
+  align-self: end;
+  margin: 1rem;
+  margin-left: 0;
+  @media screen and (max-width: 768px) {
+    margin: auto;
+    width: 100%;
+  }
+  @media screen and (min-width: 2000px) {
+    margin: 2rem;
+    margin-left: 0;
+  }
+}
