@@ -10,12 +10,12 @@ import Menu from "./container/Menu/Menu";
 function App() {
   return (
     <>
-      {/*<Navbar/>
-    <Homepage/>
-    <Services/> 
-    <Welcome/>
-    <Footer/> */}
+      <Navbar onHomePage={true} />
+      <Homepage />
+      <Services />
+      <Welcome />
       <Menu />
+      <Footer />
     </>
   );
 }
