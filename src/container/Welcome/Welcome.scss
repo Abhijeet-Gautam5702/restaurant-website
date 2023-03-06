@@ -1,6 +1,6 @@
 .app__welcome {
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 2rem;
 
@@ -50,13 +50,14 @@
 
   .p-text {
     margin-bottom: 1rem;
-    font-size:0.8rem;
+    // font-size:0.8rem;
   }
 
   @media screen and (max-width: 768px) {
     margin: 0;
   }
   @media screen and (min-width: 2000px) {
+    flex: 0.7;
     h2 {
       margin-bottom: 2.5rem;
     }

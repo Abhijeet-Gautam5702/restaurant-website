@@ -18,7 +18,7 @@ li {
 /*center a div*/
 .app__flex {
   display: flex;
-  flex-flow:row wrap;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
 }
@@ -93,4 +93,13 @@ li {
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
   }
+}
+
+.btn-normal-state {
+  background-color: var(--light-blue);
+  color: black;
+}
+.btn-hover-state {
+  background-color: var(--orange);
+  color: white;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Menu.scss";
 import ItemCard from "../../components/ItemCard/ItemCard";
 // import Navbar from "../../components/Navbar/Navbar";
@@ -47,28 +47,47 @@ const menuItems = [
 
 export default function Menu() {
   const [displayItems, setDisplayItems] = useState(menuItems);
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(0);
+
+  useEffect(() => {
+    const filters = document.querySelectorAll(".filter");
+    // console.log(filters[3]);
+
+    filters.forEach((filter) => {
+      if (filter.id === isActive) {
+        if (isActive <= 3) {
+          filter.style.backgroundColor = "var(--orange)";
+          filter.style.color = "var(--white)";
+        } else if (isActive == 4) {
+          filter.style.backgroundColor = "var(--green)";
+          filter.style.color = "var(--white)";
+        } else {
+          filter.style.backgroundColor = "var(--red)";
+          filter.style.color = "var(--white)";
+        }
+      } else {
+        filter.style.backgroundColor = "var(--light-blue)";
+        filter.style.color = "var(--matt-black)";
+      }
+    });
+  }, [isActive]);
 
   function handleClick(e) {
     const filterName = e.target.textContent;
-    // const filterType=e.target;
+    const filterId = e.target.id;
+
     setDisplayItems((prevDisplayItems) => {
-      const newDisplayItems = menuItems.filter((item) =>
-        item.tags.includes(filterName)
-      );
+      const newDisplayItems = menuItems.filter((item) => {
+        return item.tags.includes(filterName);
+      });
       return newDisplayItems;
     });
-    setIsActive((isActive) => !isActive);
-    /*
-    make an array indicating active states
-    whenever a filter-button is clicked, update active state
-    change style of filter-btn according to new active state
-    */
+
+    setIsActive(filterId);
   }
 
   return (
     <>
-      {/* <Navbar onHomePage={false}/> */}
       <div id="menu" className=" app__menu app__container">
         <h2 className="head-text app__menu-title">
           We are here to
@@ -77,33 +96,46 @@ export default function Menu() {
         <div className="app__menu-filters">
           <ul>
             <li
-              style={{
-                backgroundColor: isActive
-                  ? "var(--orange)"
-                  : "var(--light-blue)",
-              }}
               onClick={handleClick}
-              className="subhead-text meals"
+              id={0}
+              className="subhead-text meals filter btn-hover-state"
             >
               all
             </li>
-            <li onClick={handleClick} className="subhead-text meals">
+            <li
+              onClick={handleClick}
+              id={1}
+              className="subhead-text meals filter"
+            >
               lunch
             </li>
-            <li onClick={handleClick} className="subhead-text meals">
+            <li
+              onClick={handleClick}
+              id={2}
+              className="subhead-text meals filter"
+            >
               dinner
             </li>
-            <li onClick={handleClick} className="subhead-text meals">
+            <li
+              onClick={handleClick}
+              id={3}
+              className="subhead-text meals filter"
+            >
               drinks
             </li>
           </ul>
           <ul>
-            <li onClick={handleClick} className="subhead-text filter-veg veg">
+            <li
+              onClick={handleClick}
+              id={4}
+              className="subhead-text filter-veg veg filter"
+            >
               veg
             </li>
             <li
               onClick={handleClick}
-              className="subhead-text filter-non-veg non-veg"
+              id={5}
+              className="subhead-text filter-non-veg non-veg filter"
             >
               non-veg
             </li>
