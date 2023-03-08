@@ -3,7 +3,7 @@ import "./CartItem.scss";
 
 export default function CartItem(props) {
   const { item } = props;
-  console.log(item);
+  // console.log(item);
   return (
     <div className="cart__item app__flex">
       <img src={item.img} alt="item" />

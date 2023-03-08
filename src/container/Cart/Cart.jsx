@@ -2,7 +2,10 @@ import React from "react";
 import "./Cart.scss";
 import CartItem from "../../components/CartItem/CartItem";
 import { images } from "../../assets/images/index";
+import { cartItems } from "../../components/ItemCard/ItemCard";
 
+
+/*
 const cartItems = [
   {
     name: "Chicken Fiesta",
@@ -45,6 +48,9 @@ const cartItems = [
     qt: 2,
   },
 ];
+*/
+
+console.log(cartItems)
 
 export default function Cart() {
   return (

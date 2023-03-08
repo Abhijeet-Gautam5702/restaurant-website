@@ -43,8 +43,6 @@ const menuItems = [
   },
 ];
 
-// const filterItemColors={'lunch':'var(--orange)'}
-
 export default function Menu() {
   const [displayItems, setDisplayItems] = useState(menuItems);
   const [isActive, setIsActive] = useState(0);
