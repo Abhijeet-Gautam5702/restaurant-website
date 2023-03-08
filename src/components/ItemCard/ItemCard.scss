@@ -142,8 +142,8 @@
   align-self: end;
   margin: 1rem;
   margin-left: 0;
-  border-radius: 0 0 5px 5px;
   @media screen and (max-width: 768px) {
+    border-radius: 0 0 5px 5px;
     margin: auto;
     width: 100%;
   }

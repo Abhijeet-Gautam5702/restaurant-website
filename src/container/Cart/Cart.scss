@@ -1,0 +1,60 @@
+.app__cart {
+  flex-direction: column;
+  justify-content: flex-start;
+  //   outline: 2px solid red;
+  background-color: var(--light-blue);
+  padding: 6rem 1rem;
+  h2 {
+    span {
+      color: var(--orange);
+    }
+  }
+}
+
+.app__cart-items {
+  //   outline: 2px solid blue;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 2rem;
+
+  @media screen and (min-width: 2000px) {
+    max-width: 1200px;
+    margin-top: 5rem;
+  }
+}
+
+.app__cart-otherCharges {
+  background-color: var(--white);
+  margin-top: 0;
+  padding: 0.5rem;
+
+  div {
+    justify-content: space-between;
+    // outline: 2px solid red;
+  }
+  @media screen and (min-width: 2000px) {
+    padding: 1rem;
+  }
+}
+
+.amt {
+  margin: auto 0;
+  padding: 0.5rem 1.5rem;
+
+  @media screen and (max-width: 450px) {
+    padding: 0.3rem 1rem;
+  }
+}
+
+.app__cart-total {
+  justify-content: space-between;
+  background-color: var(--orange);
+  color: var(--white);
+  margin-top: 0;
+  padding: 0.5rem;
+  // outline: 2px solid red;
+
+  @media screen and (min-width: 2000px) {
+    padding: 1rem;
+  }
+}
