@@ -4,8 +4,12 @@ import ItemCard from "../../components/ItemCard/ItemCard";
 // import Navbar from "../../components/Navbar/Navbar";
 import { images } from "../../assets/images";
 
+import { useSelector, useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cartSlice";
+
 const menuItems = [
   {
+    id:1,
     name: "Chicken Fiesta",
     price: "50",
     rating: 4.5,
@@ -15,6 +19,7 @@ const menuItems = [
     tags: ["lunch", "non-veg", "drinks", "all"],
   },
   {
+    id:2,
     name: "Veg Fiesta",
     price: "30",
     rating: 3.8,
@@ -24,6 +29,7 @@ const menuItems = [
     tags: ["lunch", "dinner", "veg", "all"],
   },
   {
+    id:3,
     name: "Townhouse ",
     price: "30",
     rating: 2.8,
@@ -33,6 +39,7 @@ const menuItems = [
     tags: ["dinner", "veg", "drinks", "all"],
   },
   {
+    id:4,
     name: "Grilled Feast",
     price: "30",
     rating: 4.9,

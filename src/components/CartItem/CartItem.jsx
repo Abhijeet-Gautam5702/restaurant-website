@@ -1,23 +1,40 @@
 import React from "react";
 import "./CartItem.scss";
+import {
+  increaseItemQuantity,
+  decreaseItemQuantity,
+} from "../../redux/cartSlice";
+import { useDispatch } from "react-redux";
 
 export default function CartItem(props) {
-  const { item } = props;
-  // console.log(item);
+  const { id, price, name, qt, img } = props.item;
+
+  const dispatch = useDispatch();
+  function handleUpdateQuantity(e) {
+    if (e.target.textContent === "+") {
+      dispatch(increaseItemQuantity({ id }));
+    } else {
+      dispatch(decreaseItemQuantity({ id }));
+    }
+  }
   return (
     <div className="cart__item app__flex">
-      <img src={item.img} alt="item" />
+      <img src={img} alt="item" />
       <div className="cart__item-details app__flex">
-        <p className="subhead-text">{item.name}</p>
-        <p className="subhead-text">{`$ ${item.price}`}</p>
+        <p className="subhead-text">{name}</p>
+        <p className="subhead-text">{`$ ${price}`}</p>
         <div className="addToCart-control app__flex">
-          <button className="btn">-</button>
-          <p className="subhead-text">{item.qt}</p>
-          <button className="btn">+</button>
+          <button className="btn" onClick={handleUpdateQuantity}>
+            -
+          </button>
+          <p className="subhead-text">{qt}</p>
+          <button className="btn" onClick={handleUpdateQuantity}>
+            +
+          </button>
         </div>
       </div>
       <div className="cart__item-bill subhead-text amt">
-        {`$ ${item.price * item.qt}`}
+        {`$ ${price * qt}`}
       </div>
     </div>
   );

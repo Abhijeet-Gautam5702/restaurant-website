@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Cart.scss";
 import CartItem from "../../components/CartItem/CartItem";
-import { images } from "../../assets/images/index";
-import { cartItems } from "../../components/ItemCard/ItemCard";
-
+// import { images } from "../../assets/images/index";
+// import { cartItems } from "../../components/ItemCard/ItemCard";
+import { useSelector } from "react-redux";
 
 /*
 const cartItems = [
@@ -50,16 +50,25 @@ const cartItems = [
 ];
 */
 
-console.log(cartItems)
-
 export default function Cart() {
+  const itemsAddedToCart = useSelector((state) => state.cart);
+
+  const [totalBill, setTotalBill] = useState(0);
+  useEffect(() => {
+    let sum = 0;
+    itemsAddedToCart.forEach((item) => {
+      sum += item.price * item.qt;
+    });
+    setTotalBill(sum);
+  }, [itemsAddedToCart]);
+
   return (
     <div className="app__container app__flex app__cart">
       <h2 className="head-text">
         customize your <span>cart</span>
       </h2>
       <div className="app__cart-items">
-        {cartItems.map((item) => {
+        {itemsAddedToCart.map((item) => {
           return <CartItem key={Math.random()} item={item} />;
         })}
       </div>
@@ -75,7 +84,7 @@ export default function Cart() {
       </div>
       <div className="app__cart-total app__cart-items app__flex">
         <p className="subhead-text">Order Total</p>
-        <p className="subhead-text ">{`$205`}</p>
+        <p className="subhead-text ">{20+totalBill}</p>
       </div>
     </div>
   );
