@@ -15,6 +15,7 @@ export default function CartItem(props) {
       dispatch(increaseItemQuantity({ id }));
     } else {
       dispatch(decreaseItemQuantity({ id }));
+      // dispatch(deleteFromCart({ id }));
     }
   }
   return (

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./Navbar.scss";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
 
 //variants
 const dropdownMenuAnimation = {
@@ -27,6 +29,11 @@ const toggleMenuAnimation = {
 export default function Navbar({ onHomePage }) {
   const [navBGColor, setNavBGColor] = useState("rgba(0,0,0,0.4)");
   const [isOpen, setIsOpen] = useState(false);
+
+  let totalItemsInCart = 0;
+  useSelector((state) => state.cart).forEach(
+    (item) => (totalItemsInCart += item.qt)
+  );
 
   useEffect(() => {
     function changeNavBGColor() {
@@ -69,7 +76,22 @@ export default function Navbar({ onHomePage }) {
             <li>
               <a href="#about">About</a>
             </li>
+            <li className="cart-icon">
+              <div className="cart-items-label p-text">{totalItemsInCart}</div>
+              <a href="#cart">
+                <AiOutlineShoppingCart />
+              </a>
+            </li>
           </ul>
+
+          {/*for smaller devices */}
+
+          <div className="cart-icon-small-device">
+            <div className="cart-items-label p-text">{totalItemsInCart}</div>
+            <a href="#cart">
+              <AiOutlineShoppingCart />
+            </a>
+          </div>
 
           <motion.div
             className="navbar__toggleMenu-icon"

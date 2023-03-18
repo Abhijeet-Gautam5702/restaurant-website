@@ -1,58 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./Cart.scss";
 import CartItem from "../../components/CartItem/CartItem";
-// import { images } from "../../assets/images/index";
-// import { cartItems } from "../../components/ItemCard/ItemCard";
 import { useSelector } from "react-redux";
 
-/*
-const cartItems = [
-  {
-    name: "Chicken Fiesta",
-    price: "50",
-    rating: 4.5,
-    label: "best seller",
-    isVeg: false,
-    img: images.gallery1,
-    tags: ["lunch", "non-veg", "drinks", "all"],
-    qt: 2,
-  },
-  {
-    name: "Veg Fiesta",
-    price: "30",
-    rating: 3.8,
-    label: "new arrival",
-    isVeg: true,
-    img: images.gallery2,
-    tags: ["lunch", "dinner", "veg", "all"],
-    qt: 2,
-  },
-  {
-    name: "Townhouse ",
-    price: "30",
-    rating: 2.8,
-    label: "",
-    isVeg: true,
-    img: images.gallery3,
-    tags: ["dinner", "veg", "drinks", "all"],
-    qt: 2,
-  },
-  {
-    name: "Grilled Feast",
-    price: "30",
-    rating: 4.9,
-    label: "best seller",
-    isVeg: true,
-    img: images.gallery4,
-    tags: ["lunch", "dinner", "veg", "all"],
-    qt: 2,
-  },
-];
-*/
-
 export default function Cart() {
-  const itemsAddedToCart = useSelector((state) => state.cart);
-
+  const itemsAddedToCart = useSelector((state) => state.cart).filter(
+    (item) => item.qt > 0
+  );
   const [totalBill, setTotalBill] = useState(0);
   useEffect(() => {
     let sum = 0;
@@ -63,7 +17,7 @@ export default function Cart() {
   }, [itemsAddedToCart]);
 
   return (
-    <div className="app__container app__flex app__cart">
+    <div id="cart" className="app__container app__flex app__cart">
       <h2 className="head-text">
         customize your <span>cart</span>
       </h2>
@@ -84,7 +38,7 @@ export default function Cart() {
       </div>
       <div className="app__cart-total app__cart-items app__flex">
         <p className="subhead-text">Order Total</p>
-        <p className="subhead-text ">{20+totalBill}</p>
+        <p className="subhead-text ">{`$${20 + totalBill}`}</p>
       </div>
     </div>
   );
