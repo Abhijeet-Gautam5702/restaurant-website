@@ -16,6 +16,8 @@
   width: 100%;
   max-width: 500px;
   margin-top: 2rem;
+  // box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  // border:1px solid rgba(0,0,0,0.5);
 
   @media screen and (min-width: 2000px) {
     max-width: 1200px;
@@ -24,6 +26,7 @@
 }
 
 .app__cart-otherCharges {
+  border: none;
   background-color: var(--white);
   margin-top: 0;
   padding: 0.5rem;
@@ -47,6 +50,7 @@
 }
 
 .app__cart-total {
+  border: none;
   justify-content: space-between;
   background-color: var(--orange);
   color: var(--white);
@@ -57,4 +61,15 @@
   @media screen and (min-width: 2000px) {
     padding: 1rem;
   }
+}
+
+.app__emptyCart-label{
+  // outline: 2px solid red;
+  // border: 2px solid red;
+  // margin-top: 10rem;
+  // box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  padding: 1rem;
+  border-radius:5px;
+  text-align: center;
+  // background-color: var(--light-green);
 }

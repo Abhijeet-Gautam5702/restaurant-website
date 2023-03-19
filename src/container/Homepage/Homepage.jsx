@@ -42,7 +42,10 @@ export default function Homepage() {
           eaque. Beatae minima deserunt cumque dolorem consectetur. Ratione
           aliquid, assumenda unde repellendus similique dolorum quis.
         </p>
-        <button className=" btn home__menuBtn">explore menu</button>
+
+        <button className=" btn home__menuBtn">
+          <a href="#menu">explore menu</a>
+        </button>
       </motion.div>
     </div>
   );

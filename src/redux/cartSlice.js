@@ -4,13 +4,6 @@ import { images } from "../assets/images/index";
 const cartSlice = createSlice({
   name: "cart",
   initialState: [
-    {
-      id: 0.5,
-      name: "Stock Item",
-      price: 100,
-      qt: 2,
-      img: images.gallery4,
-    },
   ],
   reducers: {
     addToCart: (state, action) => {
@@ -56,10 +49,11 @@ const cartSlice = createSlice({
         }
         return item;
       });
-      //delete the item with qt=0 from the state
-      const idx = state.find((item) => item.id === id && item.qt === 0);
-      if (idx) {
-        state.splice(idx, 1);
+      //delete the items with qt=0 from the state
+      for (let i = state.length - 1; i >= 0; i--) {
+        if (state[i].qt === 0) {
+          state.splice(i, 1);
+        }
       }
     },
   },

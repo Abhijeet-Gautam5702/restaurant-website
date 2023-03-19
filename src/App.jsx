@@ -8,7 +8,6 @@ import Welcome from "./container/Welcome/Welcome";
 import Menu from "./container/Menu/Menu";
 import Cart from "./container/Cart/Cart";
 
-
 function App() {
   return (
     <>
@@ -17,7 +16,8 @@ function App() {
       <Services />
       <Welcome />
       <Menu />
-      <Cart/>
+      <Cart />
+
       <Footer />
     </>
   );
