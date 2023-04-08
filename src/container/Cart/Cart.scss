@@ -63,13 +63,23 @@
   }
 }
 
-.app__emptyCart-label{
+.app__emptyCart-label {
   // outline: 2px solid red;
   // border: 2px solid red;
   // margin-top: 10rem;
   // box-shadow: 0 0 10px rgba(0,0,0,0.3);
   padding: 1rem;
-  border-radius:5px;
+  border-radius: 5px;
   text-align: center;
   // background-color: var(--light-green);
+}
+
+.app__cart-placeOrderBtn {
+  margin: 1rem;
+  width: 500px;
+  background-color: var(--dark-blue);
+
+  &:hover {
+    background-color: #0036a1;
+  }
 }

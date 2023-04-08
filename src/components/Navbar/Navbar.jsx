@@ -75,7 +75,7 @@ export default function Navbar({ onHomePage,showAbout=true }) {
               <NavLink to="/menu">Menu</NavLink>
             </li>
             <li>
-              <a href="#order-history">Order History</a>
+              <NavLink to="/order-history">Order History</NavLink>
             </li>
             {showAbout && <li>
               <a href="#about">About</a>

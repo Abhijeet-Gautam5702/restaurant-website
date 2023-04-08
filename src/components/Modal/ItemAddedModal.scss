@@ -1,0 +1,29 @@
+.app__modal {
+  position: fixed;
+  z-index: 999;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  //   border: 2px solid black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  width: fit-content;
+  padding: 0.5rem;
+  background-color: var(--green);
+
+  transition: 0.3s ease-in-out;
+}
+
+.app__modal-icon {
+  margin-right: 0.3rem;
+  img {
+    width: 35px;
+    object-fit: cover;
+  }
+}
+
+.app__modal-text {
+  color: white;
+  font-weight: 500;
+  font-size: 0.8rem;
+}

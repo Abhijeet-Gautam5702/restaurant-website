@@ -4,12 +4,14 @@ import ItemCard from "../../components/ItemCard/ItemCard";
 // import Navbar from "../../components/Navbar/Navbar";
 import { images } from "../../assets/images";
 
+import ItemAddedModal from "../../components/Modal/ItemAddedModal";
+
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
 
 const menuItems = [
   {
-    id:1,
+    id: 1,
     name: "Chicken Fiesta",
     price: "50",
     rating: 4.5,
@@ -19,7 +21,7 @@ const menuItems = [
     tags: ["lunch", "non-veg", "drinks", "all"],
   },
   {
-    id:2,
+    id: 2,
     name: "Veg Fiesta",
     price: "30",
     rating: 3.8,
@@ -29,7 +31,7 @@ const menuItems = [
     tags: ["lunch", "dinner", "veg", "all"],
   },
   {
-    id:3,
+    id: 3,
     name: "Townhouse ",
     price: "30",
     rating: 2.8,
@@ -39,7 +41,7 @@ const menuItems = [
     tags: ["dinner", "veg", "drinks", "all"],
   },
   {
-    id:4,
+    id: 4,
     name: "Grilled Feast",
     price: "30",
     rating: 4.9,
@@ -53,6 +55,7 @@ const menuItems = [
 export default function Menu() {
   const [displayItems, setDisplayItems] = useState(menuItems);
   const [isActive, setIsActive] = useState(0);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const filters = document.querySelectorAll(".filter");
@@ -91,8 +94,14 @@ export default function Menu() {
     setIsActive(filterId);
   }
 
+  function toggleShowModal() {
+    setShowModal(true);
+    setTimeout(() => setShowModal(false), 1000);
+  }
+
   return (
     <>
+      <ItemAddedModal toShow={showModal}/>
       <div id="menu" className=" app__menu app__container">
         <h2 className="head-text app__menu-title">
           We are here to
@@ -148,7 +157,13 @@ export default function Menu() {
         </div>
         <div className="app__menu-items">
           {displayItems.map((item) => {
-            return <ItemCard key={Math.random()} itemDetails={item} />;
+            return (
+              <ItemCard
+                key={Math.random()}
+                itemDetails={item}
+                toggleShowModal={toggleShowModal}
+              />
+            );
           })}
         </div>
       </div>

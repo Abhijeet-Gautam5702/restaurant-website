@@ -3,6 +3,8 @@ import "./Cart.scss";
 import CartItem from "../../components/CartItem/CartItem";
 import { useSelector } from "react-redux";
 
+import { NavLink } from "react-router-dom";
+
 export default function Cart() {
   const itemsAddedToCart = useSelector((state) => state.cart);
 
@@ -42,6 +44,9 @@ export default function Cart() {
             <p className="subhead-text">Order Total</p>
             <p className="subhead-text ">{`$${20 + totalBill}`}</p>
           </div>
+          <NavLink to="/payment">
+            <button className="btn app__cart-placeOrderBtn">Place order</button>
+          </NavLink>
         </>
       ) : (
         <p className="app__emptyCart-label subhead-text">

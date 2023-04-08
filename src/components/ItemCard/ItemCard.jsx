@@ -8,6 +8,9 @@ import { addToCart } from "../../redux/cartSlice";
 export default function ItemCard(props) {
   const { id, name, price, rating, isVeg, label, img, tags } =
     props.itemDetails;
+  const toggleShowModal = props.toggleShowModal;
+
+  const [toShow, setToShow] = useState(false);
 
   let labelColor;
   if (label === "best seller") {
@@ -40,6 +43,10 @@ export default function ItemCard(props) {
   const dispatch = useDispatch();
 
   function handleAddToCartClick(e) {
+    // set toShow = true everytime the button is clicked,
+    // after 2 seconds. set toShow = false again
+    toggleShowModal();
+
     dispatch(
       addToCart({
         name,
