@@ -5,6 +5,10 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 
+import {
+  NavLink,
+} from "react-router-dom";
+
 //variants
 const dropdownMenuAnimation = {
   open: {
@@ -26,7 +30,7 @@ const toggleMenuAnimation = {
   },
 };
 
-export default function Navbar({ onHomePage }) {
+export default function Navbar({ onHomePage,showAbout=true }) {
   const [navBGColor, setNavBGColor] = useState("rgba(0,0,0,0.4)");
   const [isOpen, setIsOpen] = useState(false);
 
@@ -65,22 +69,22 @@ export default function Navbar({ onHomePage }) {
           </div>
           <ul className="navbar__menu">
             <li>
-              <a href="#home">Home</a>
+              <NavLink to="/" >Home</NavLink>
             </li>
             <li>
-              <a href="#menu">Menu</a>
+              <NavLink to="/menu">Menu</NavLink>
             </li>
             <li>
               <a href="#order-history">Order History</a>
             </li>
-            <li>
+            {showAbout && <li>
               <a href="#about">About</a>
-            </li>
+            </li>}
             <li className="cart-icon">
               <div className="cart-items-label p-text">{totalItemsInCart}</div>
-              <a href="#cart">
+              <NavLink to="/cart" >
                 <AiOutlineShoppingCart />
-              </a>
+              </NavLink>
             </li>
           </ul>
 

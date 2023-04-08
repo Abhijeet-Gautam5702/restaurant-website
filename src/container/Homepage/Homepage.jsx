@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./Homepage.scss";
+import { NavLink } from "react-router-dom";
 
 const homepageVariants = {
   hidden: {
@@ -44,7 +45,7 @@ export default function Homepage() {
         </p>
 
         <button className=" btn home__menuBtn">
-          <a href="#menu">explore menu</a>
+          <NavLink to="/menu">explore menu</NavLink>
         </button>
       </motion.div>
     </div>
