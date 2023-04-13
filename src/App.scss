@@ -61,9 +61,6 @@ li {
   @media screen and (min-width: 2000px) {
     font-size: 1.6rem;
   }
-  @media screen and (max-width: 450px) {
-    font-size: 0.6rem;
-  }
 }
 
 /* style for button element */
@@ -112,4 +109,8 @@ li {
 }
 .text-bold {
   font-weight: bold;
+}
+
+.topBottom_margin-1{
+  margin: 1rem 0;
 }

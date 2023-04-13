@@ -1,6 +1,6 @@
 .services__card {
   // border: 2px solid black;
-  // border-radius: 5px;
+  border-radius: 5px;
   background-color: var(--orange);
   //   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   //   max-height: 250px;
@@ -34,5 +34,8 @@
     img {
       width: 100px;
     }
+  }
+  @media screen and (max-width: 768px) {
+    width: 250px;
   }
 }

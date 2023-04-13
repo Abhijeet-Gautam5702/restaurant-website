@@ -64,7 +64,7 @@ export default function ItemCard(props) {
       </p>
       <div className="card__item-detail">
         <img src={img} alt="dish_img" />
-        <p className="subhead-text">{name}</p>
+        <p className="subhead-text topBottom_margin-1">{name}</p>
         <div className="rating-price-cont">
           <div style={ratingStyle} className="rating">
             <div className="star">

@@ -5,9 +5,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 
-import {
-  NavLink,
-} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 //variants
 const dropdownMenuAnimation = {
@@ -30,7 +28,7 @@ const toggleMenuAnimation = {
   },
 };
 
-export default function Navbar({ onHomePage,showAbout=true }) {
+export default function Navbar({ onHomePage, showAbout = true }) {
   const [navBGColor, setNavBGColor] = useState("rgba(0,0,0,0.4)");
   const [isOpen, setIsOpen] = useState(false);
 
@@ -69,7 +67,7 @@ export default function Navbar({ onHomePage,showAbout=true }) {
           </div>
           <ul className="navbar__menu">
             <li>
-              <NavLink to="/" >Home</NavLink>
+              <NavLink to="/">Home</NavLink>
             </li>
             <li>
               <NavLink to="/menu">Menu</NavLink>
@@ -77,12 +75,14 @@ export default function Navbar({ onHomePage,showAbout=true }) {
             <li>
               <NavLink to="/order-history">Order History</NavLink>
             </li>
-            {showAbout && <li>
-              <a href="#about">About</a>
-            </li>}
+            {showAbout && (
+              <li>
+                <a href="#about">About</a>
+              </li>
+            )}
             <li className="cart-icon">
               <div className="cart-items-label p-text">{totalItemsInCart}</div>
-              <NavLink to="/cart" >
+              <NavLink to="/cart">
                 <AiOutlineShoppingCart />
               </NavLink>
             </li>
@@ -126,9 +126,11 @@ export default function Navbar({ onHomePage,showAbout=true }) {
             <li>
               <NavLink to="/order-history">Order History</NavLink>
             </li>
-            <li>
-              <NavLink to="/about">About</NavLink>
-            </li>
+            {showAbout && (
+              <li>
+                <a href="#about">About</a>
+              </li>
+            )}
           </motion.ul>
         )}
       </nav>
