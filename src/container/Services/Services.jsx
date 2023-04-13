@@ -8,25 +8,25 @@ const servicesData = [
   {
     title: "quality food",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dignissimos tenetur temporibus accusantium cupiditate nam!",
+      "Relish expertly crafted dishes made with the freshest ingredients for an unforgettable dining experience.",
     icon: icons.cutlery,
   },
   {
     title: "master chefs",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dignissimos tenetur temporibus accusantium cupiditate nam!",
+      "Our culinary maestros create gastronomic wonders that will leave you craving for more.",
     icon: icons.chef,
   },
   {
     title: "24/7 service",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dignissimos tenetur temporibus accusantium cupiditate nam!",
+      "Enjoy our impeccable service and delectable dishes anytime, day or night, for a truly satisfying experience.",
     icon: icons.support,
   },
   {
     title: "order online",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dignissimos tenetur temporibus accusantium cupiditate nam!",
+      "From the comfort of your own home, indulge in our delicious offerings with our hassle-free online ordering system.",
     icon: icons.cart,
   },
 ];

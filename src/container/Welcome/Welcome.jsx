@@ -22,55 +22,59 @@ const imgVariants = {
 
 export default function Welcome() {
   return (
-    <div id='about' className="app__welcome app__flex">
-      <motion.div
+    <div id="about" className="app__welcome app__flex">
+      <div
         className="welcome__gallery"
         variants={imgVariants}
         initial="hidden"
         whileInView="visible"
       >
-        <motion.img
+        <img
           variants={imgVariants}
           whileHover="hover"
           src={images.gallery1}
           alt=""
         />
-        <motion.img
+        <img
           variants={imgVariants}
           whileHover="hover"
           src={images.gallery2}
           alt=""
         />
-        <motion.img
+        <img
           variants={imgVariants}
           whileHover="hover"
           src={images.gallery3}
           alt=""
         />
-        <motion.img
+        <img
           variants={imgVariants}
           whileHover="hover"
           src={images.gallery4}
           alt=""
         />
-      </motion.div>
+      </div>
       <div className="welcome__intro">
         <h2 className="head-text">
           welcome to <span>restro</span>
         </h2>
         <p className="p-text ">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste
-          dignissimos aut commodi ex earum repellat nulla porro, et quia
-          voluptatibus Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Voluptas, explicabo.
+          Welcome to our restaurant, where every dish is a masterpiece and every
+          experience is a delight. Our team of talented chefs and dedicated
+          staff work tirelessly to bring you the best of our cuisine, prepared
+          to perfection with only the freshest and highest-quality ingredients.
         </p>
         <p className="p-text ">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid,
-          amet asperiores quasi distinctio nesciunt iusto, quod et non quis,
-          labore repellendus? Dicta ea tempore id cumque soluta odit atque harum
-          cum quas impedit laborum temporibus asperiores voluptatum nisi alias,
-          expedita, fuga iste ad quis unde. Perferendis molestiae esse fugit
-          labore odio, omnis tempora sunt.
+          At our restaurant, we believe that dining is not just about eating,
+          but about experiencing. That's why we've created a welcoming ambiance
+          that reflects our passion for great food and impeccable service.
+          Whether you're looking for a romantic dinner, a family gathering, or a
+          business lunch, we have the perfect setting for you. Our menu is a
+          celebration of global flavors, with dishes that range from traditional
+          favorites to innovative creations. And with our commitment to using
+          sustainable and locally sourced ingredients, you can enjoy your meal
+          with a clear conscience. So why wait? Come and discover the magic of
+          our restaurant today!
         </p>
 
         <div className="welcome__intro-stats">

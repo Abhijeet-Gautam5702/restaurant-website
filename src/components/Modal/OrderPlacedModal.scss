@@ -40,5 +40,8 @@
     @media screen and (min-width:2000px){
         max-width: 900px;
     }
+    @media screen and (max-width:425px){
+        width: 80%;
+    }
     
 }

@@ -39,9 +39,10 @@ export default function Homepage() {
           meals
         </h1>
         <p className="p-text">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci, in
-          eaque. Beatae minima deserunt cumque dolorem consectetur. Ratione
-          aliquid, assumenda unde repellendus similique dolorum quis.
+          Welcome to our restaurant, where every dish is a celebration of flavor
+          and quality. From our masterfully prepared entrees to our handcrafted
+          cocktails, we strive to deliver an unforgettable dining experience for
+          all of our guests.
         </p>
 
         <button className=" btn home__menuBtn">

@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
 
 export default function ItemCard(props) {
-  const { id, name, price, rating, isVeg, label, img, tags } =
+  const { id, name, price, rating, isVeg, label, img, tags,desc } =
     props.itemDetails;
   const toggleShowModal = props.toggleShowModal;
 
@@ -77,9 +77,7 @@ export default function ItemCard(props) {
       </div>
       <div className="card__item-desc">
         <p className="p-text">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia quod
-          fuga dolor sed, amet ipsa placeat omnis corrupti voluptatem nam quae.
-          Quo ratione magni velit.
+          {desc}
         </p>
       </div>
       <button onClick={handleAddToCartClick} className="btn card__item-btn">

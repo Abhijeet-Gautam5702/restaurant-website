@@ -92,9 +92,9 @@ export default function Navbar({ onHomePage,showAbout=true }) {
 
           <div className="cart-icon-small-device">
             <div className="cart-items-label p-text">{totalItemsInCart}</div>
-            <a href="#cart">
+            <NavLink to="/cart">
               <AiOutlineShoppingCart />
-            </a>
+            </NavLink>
           </div>
 
           <motion.div
@@ -118,16 +118,16 @@ export default function Navbar({ onHomePage,showAbout=true }) {
             onClick={() => setIsOpen((isOpen) => !isOpen)}
           >
             <li>
-              <a href="#home">Home</a>
+              <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <a href="#menu">Menu</a>
+              <NavLink to="/menu">Menu</NavLink>
             </li>
             <li>
-              <a href="#order-history">Order History</a>
+              <NavLink to="/order-history">Order History</NavLink>
             </li>
             <li>
-              <a href="#about">About</a>
+              <NavLink to="/about">About</NavLink>
             </li>
           </motion.ul>
         )}
