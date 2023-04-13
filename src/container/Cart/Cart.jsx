@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from "react";
 import "./Cart.scss";
 import CartItem from "../../components/CartItem/CartItem";
-import { useSelector } from "react-redux";
+import OrderPlacedModal from "../../components/Modal/OrderPlacedModal";
 
-import { NavLink } from "react-router-dom";
+//react-redux
+import { useSelector, useDispatch } from "react-redux";
+import { clearCart } from "../../redux/cartSlice";
 
 export default function Cart() {
+  const dispatch = useDispatch();
+
   const itemsAddedToCart = useSelector((state) => state.cart);
 
   const [totalBill, setTotalBill] = useState(0);
+  const [showModal, setShowModal] = useState(false);
+
   useEffect(() => {
     let sum = 0;
     itemsAddedToCart.forEach((item) => {
@@ -17,12 +23,42 @@ export default function Cart() {
     setTotalBill(sum);
   }, [itemsAddedToCart]);
 
+  function handlePlaceOrderClick() {
+    // show modal
+    setShowModal(true);
+    setTimeout(() => {
+      setShowModal(false);
+    }, 4000);
+
+    // empty the cart
+    dispatch(clearCart());
+
+    // update localstorage
+    let history = localStorage.getItem("orderHistory")
+      ? JSON.parse(localStorage.getItem("orderHistory"))
+      : [];
+    const completeOrderDetails = {
+      orderID: Math.round(Math.random() * 100),
+      orderDate: {
+        date: 4,
+        month: 2,
+        year: 2023,
+      },
+      orderList: itemsAddedToCart.map((item) => {
+        return item.name;
+      }),
+      orderTotal: 20+ totalBill,
+    };
+    history.push(completeOrderDetails);
+    localStorage.setItem("orderHistory", JSON.stringify(history));
+  }
+
   return (
     <div id="cart" className="app__container app__flex app__cart">
       <h2 className="head-text">
         customize your <span>cart</span>
       </h2>
-
+      {showModal && <OrderPlacedModal />}
       {itemsAddedToCart.length > 0 ? (
         <>
           <div className="app__cart-items">
@@ -44,9 +80,12 @@ export default function Cart() {
             <p className="subhead-text">Order Total</p>
             <p className="subhead-text ">{`$${20 + totalBill}`}</p>
           </div>
-          <NavLink to="/payment">
-            <button className="btn app__cart-placeOrderBtn">Place order</button>
-          </NavLink>
+          <button
+            className="btn app__cart-placeOrderBtn"
+            onClick={handlePlaceOrderClick}
+          >
+            Place order
+          </button>
         </>
       ) : (
         <p className="app__emptyCart-label subhead-text">

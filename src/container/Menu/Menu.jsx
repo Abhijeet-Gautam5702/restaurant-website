@@ -6,8 +6,6 @@ import { images } from "../../assets/images";
 
 import ItemAddedModal from "../../components/Modal/ItemAddedModal";
 
-import { useSelector, useDispatch } from "react-redux";
-import { addToCart } from "../../redux/cartSlice";
 
 const menuItems = [
   {

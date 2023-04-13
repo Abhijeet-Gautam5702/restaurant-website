@@ -1,0 +1,44 @@
+.app__modal-orderPlaced{
+    z-index: 999;
+    min-width: 250px;
+    max-width: 450px;
+    // border: 2px solid red;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: var(--green);
+    color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+
+    img{
+        width: 80px;
+        height: auto;
+        object-fit: contain;
+    }
+    h2{
+        color: var(--dark-green);
+        // font-size: x-large;
+        font-weight:lighter;
+    }
+    hr{
+        color: white;
+        background-color: white;
+        width: 80%;
+        text-align: center;
+        margin: 1rem 0;
+    }
+    p{
+        // margin-top: 1rem;
+        text-align: center;
+        font-weight:lighter;
+    }
+
+    @media screen and (min-width:2000px){
+        max-width: 900px;
+    }
+    
+}
